@@ -5,13 +5,9 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
     loadEmployees();
 
     function loadEmployees() {
-
         var EmployeeRecords = employeeService.getAllEmployees();
-
-        EmployeeRecords.then(function (d) {
-            //success
+        EmployeeRecords.then(function (d) {            
             $scope.Employees = d.data;
-
         },
         function () {
             alert("Error occured while fetching employee list...");
@@ -20,8 +16,6 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
 
     //save employee data 
     $scope.save = function () {
-
-
         var Employee = {
             EmpNo: $scope.EmpNo,
             EmpName: $scope.EmpName,
@@ -29,13 +23,9 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
             DeptName: $scope.DeptName,
             Designation: $scope.Designation
         };
-
         var saverecords = employeeService.save(Employee);
-
         saverecords.then(function (d) {
-
             if (d.data.success === true) {
-
                 loadEmployees();
                 alert("Employee added successfully");
                 $scope.resetSave();
@@ -49,13 +39,11 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
 
     //reset controls after save operation
     $scope.resetSave = function () {
-
         $scope.EmpNo = '';
         $scope.EmpName = '';
         $scope.Email = '';
         $scope.DeptName = '';
         $scope.Designation = '';
-
     }
 
     //get single record by ID
@@ -75,8 +63,6 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
 
     //update Employee data
     $scope.update = function () {
-
-
         var Employee = {
             EmpID: $scope.UpdateEmpNo,
             EmpName: $scope.UpdateEmpName,
@@ -84,11 +70,8 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
             DeptName: $scope.UpdateDeptName,
             Designation: $scope.UpdateDesignation
         };
-
         var updaterecords = employeeService.update(Employee);
-
         updaterecords.then(function (d) {
-
             if (d.data.success === true) {
                 loadEmployees();
                 alert("Employee updated successfully");
@@ -105,7 +88,6 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
 
     //reset controls after update
     $scope.resetUpdate = function () {
-
         $scope.UpdateEmpNo = '';
         $scope.UpdateEmpName = '';
         $scope.UpdateEmail = '';
@@ -115,11 +97,8 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
 
     //delete Employee record
     $scope.delete = function (UpdateEmpNo) {
-
         var deleterecord = employeeService.delete($scope.UpdateEmpNo);
-
         deleterecord.then(function (d) {
-
             if (d.data.success === true) {
                 loadEmployees();
                 alert("Employee deleted succussfully");

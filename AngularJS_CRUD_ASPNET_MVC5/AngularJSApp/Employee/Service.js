@@ -1,18 +1,17 @@
 ﻿//Service to get data from employee mvc controller 
 myapp.service('employeeService', function ($http) {
 
-    this.serviceBaseURL = 'http://localhost:49990';
-
+   
     //read employees
     this.getAllEmployees = function () {
-        return $http.get(this.serviceBaseURL + '/Employee/GetEmployee');
+        return $http.get('/Employee/GetEmployee');
     }
 
     //add new employee
     this.save = function (Employee) {
         var request = $http({
             method: 'post',
-            url: this.serviceBaseURL + '/Employee/Insert',
+            url: '/Employee/Insert',
             data: Employee
         });
         return request;
@@ -22,7 +21,7 @@ myapp.service('employeeService', function ($http) {
     this.update = function (Employee) {
         var updaterequest = $http({
             method: 'post',
-            url: this.serviceBaseURL + '/Employee/Update',
+            url: '/Employee/Update',
             data: Employee
         });
         return updaterequest;
@@ -30,6 +29,6 @@ myapp.service('employeeService', function ($http) {
 
     //delete record
     this.delete = function (UpdateEmpNo) {                
-        return $http.post(this.serviceBaseURL + '/Employee/Delete/' + UpdateEmpNo);       
+        return $http.post('/Employee/Delete/' + UpdateEmpNo);       
     }
 });
