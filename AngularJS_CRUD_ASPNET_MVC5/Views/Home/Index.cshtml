@@ -31,17 +31,17 @@
                     <td>{{emp.DeptName}}</td>
                     <td>{{emp.Designation}}</td>
                     <td style="width:200px;">
-                        <a href="#" 
+                        <a href="#"
                            class="btn btn-info"
-                           data-toggle="modal" 
-                           data-target="#Update" 
+                           data-toggle="modal"
+                           data-target="#Update"
                            ng-click="getForUpdate(emp)">
-                           Update
+                            Update
                         </a>
                         <a href="#" class="btn btn-danger"
-                           id="btnDelete" 
-                           data-toggle="modal" 
-                           data-target="#deleteDialog" 
+                           id="btnDelete"
+                           data-toggle="modal"
+                           data-target="#deleteDialog"
                            ng-click="getForDelete(emp)">
                             Delete
                         </a>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="modal-body" style="margin-left:20px">
                     @*Add New Employee form starts here...*@
-                    <form class="form-horizontal" name="AddNewForm" >
+                    <form class="form-horizontal" name="AddNewForm">
                         <div class="form-group">
                             <input class="form-control" readonly="readonly" name="EmpNo" ng-model="EmpNo" type="hidden" placeholder="Employee Number" />
                         </div>
@@ -85,7 +85,7 @@
                             <label class="control-label"> Designation</label>
                             <input class="form-control" name="Designation" ng-model="Designation" type="text" placeholder="Designation" />
 
-                        </div>                       
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -125,7 +125,7 @@
                         <div class="form-group">
                             <label class="text-info"> Designation</label>
                             <input class="form-control" name="Designation" ng-model="UpdateDesignation" type="text" placeholder="Designation" />
-                        </div>                       
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">

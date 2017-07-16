@@ -10,7 +10,7 @@ namespace AngularJS_CRUD_ASPNET_MVC5.Controllers
     public class EmployeeController : Controller
     {
         // GET Employee/GetEmployee
-        [HttpGet]        
+        [HttpGet]
         public JsonResult GetEmployee()
         {
             using (LearningDBEntities db = new LearningDBEntities())
@@ -22,7 +22,7 @@ namespace AngularJS_CRUD_ASPNET_MVC5.Controllers
         }
 
         //POST Employee/AddEmployee  
-        [HttpPost]     
+        [HttpPost]
         public JsonResult Insert(Employee employee)
         {
             if (employee != null)
@@ -39,10 +39,10 @@ namespace AngularJS_CRUD_ASPNET_MVC5.Controllers
                 return Json(new { success = false });
             }
         }
-                    
+
 
         //POST Employee/Update     
-        [HttpPost]     
+        [HttpPost]
         public JsonResult Update(Employee updatedEmployee)
         {
             using (LearningDBEntities db = new LearningDBEntities())
@@ -65,7 +65,7 @@ namespace AngularJS_CRUD_ASPNET_MVC5.Controllers
         }
 
         //POST Employee/Delete/1
-        [HttpPost]       
+        [HttpPost]
         public JsonResult Delete(int id)
         {
             using (LearningDBEntities db = new LearningDBEntities())

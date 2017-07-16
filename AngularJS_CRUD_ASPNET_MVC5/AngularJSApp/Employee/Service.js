@@ -1,7 +1,7 @@
 ﻿//Service to get data from employee mvc controller 
 myapp.service('employeeService', function ($http) {
 
-   
+
     //read employees
     this.getAllEmployees = function () {
         return $http.get('/Employee/GetEmployee');
@@ -15,7 +15,7 @@ myapp.service('employeeService', function ($http) {
             data: Employee
         });
         return request;
-    }    
+    }
 
     //update Employee records
     this.update = function (Employee) {
@@ -28,7 +28,7 @@ myapp.service('employeeService', function ($http) {
     }
 
     //delete record
-    this.delete = function (UpdateEmpNo) {                
-        return $http.post('/Employee/Delete/' + UpdateEmpNo);       
+    this.delete = function (UpdateEmpNo) {
+        return $http.post('/Employee/Delete/' + UpdateEmpNo);
     }
 });

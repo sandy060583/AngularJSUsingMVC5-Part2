@@ -6,7 +6,7 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
 
     function loadEmployees() {
         var EmployeeRecords = employeeService.getAllEmployees();
-        EmployeeRecords.then(function (d) {            
+        EmployeeRecords.then(function (d) {
             $scope.Employees = d.data;
         },
         function () {
@@ -33,7 +33,7 @@ myapp.controller('employee-controller', function ($scope, employeeService) {
             else { alert("Employee not added."); }
         },
         function () {
-            alert("Error occured while adding employee...try again...");
+            alert("Error occurred while adding employee.");
         });
     }
 
